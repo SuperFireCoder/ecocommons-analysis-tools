@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="4.728">
+  <testsuite name="SignInOutButton" errors="0" failures="0" skipped="0" timestamp="2021-02-05T03:14:25" time="3.337" tests="2">
+    <testcase classname="SignInOutButton renders correct state when signed out" name="SignInOutButton renders correct state when signed out" time="0.027">
+    </testcase>
+    <testcase classname="SignInOutButton renders correct state when signed in" name="SignInOutButton renders correct state when signed in" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="IndexPage" errors="0" failures="0" skipped="0" timestamp="2021-02-05T03:14:25" time="3.398" tests="3">
+    <testcase classname="IndexPage renders without crashing" name="IndexPage renders without crashing" time="0.045">
+    </testcase>
+    <testcase classname="IndexPage renders welcome without other user info when not signed in" name="IndexPage renders welcome without other user info when not signed in" time="0.015">
+    </testcase>
+    <testcase classname="IndexPage renders welcome with user&apos;s name when signed in" name="IndexPage renders welcome with user&apos;s name when signed in" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="DataPage" errors="0" failures="0" skipped="0" timestamp="2021-02-05T03:14:25" time="3.434" tests="1">
+    <testcase classname="DataPage renders without crashing" name="DataPage renders without crashing" time="0.064">
+    </testcase>
+  </testsuite>
+</testsuites>
