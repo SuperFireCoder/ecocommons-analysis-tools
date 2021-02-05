@@ -19,9 +19,16 @@ before_script:
 
 unit test:
   stage: test
+  image: node:12-alpine
+  before_script: []
   script:
-    - docker build --tag testimage .
-    - docker run testimage npm run test
+    - echo -e "@ecocommons-australia:registry=https://gitlab.com/api/v4/packages/npm/\n//gitlab.com/api/v4/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
+    - npm ci
+    - npm test -- --colors --coverage --reporters=default --reporters=jest-junit
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    reports:
+      junit: junit.xml
 
 build image:
   stage: build
