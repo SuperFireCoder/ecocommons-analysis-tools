@@ -1,12 +1,29 @@
-import { ComponentProps } from "react";
+import { ComponentProps, useMemo } from "react";
 import { Header as EcHeader } from "@ecocommons-australia/ui-library";
 import SignInOutButton from "./SignInOutButton";
 
 // This <Header /> injects the <SignInOutButton /> specific to this site
 
-export default function Header(
-    props: Omit<ComponentProps<typeof EcHeader>, "tabLinks">
-) {
+export default function Header({
+    subBarLinks = [
+        {
+            key: "point-and-click",
+            href: "/point-and-click",
+            label: "Point & Click",
+        },
+        {
+            key: "coding",
+            href: "/coding",
+            label: "Notebooks & Command Line",
+        },
+        // {
+        //     key: "function-catalogue",
+        //     href: "/function-catalogue",
+        //     label: "Function Catalogue",
+        // },
+    ],
+    ...props
+}: Omit<ComponentProps<typeof EcHeader>, "tabLinks">) {
     return (
         <EcHeader
             signInOutButton={<SignInOutButton />}
@@ -27,6 +44,7 @@ export default function Header(
                         .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_VIRTUAL_LABORATORIES ??
                     "#",
             }}
+            subBarLinks={subBarLinks}
             {...props}
         />
     );

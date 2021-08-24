@@ -18,9 +18,9 @@
 2. __Clone the project__
 
     ```bash
-    git clone git@gitlab.com:ecocommons-australia/ecocommons-platform/ui-client.git
+    git clone git@gitlab.com:ecocommons-australia/ecocommons-platform/analysis-tools-ui.git
     # or
-    git clone https://gitlab.com/ecocommons-australia/ecocommons-platform/ui-client.git
+    git clone https://gitlab.com/ecocommons-australia/ecocommons-platform/analysis-tools-ui.git
     ```
 
 3. __Install dependencies__
