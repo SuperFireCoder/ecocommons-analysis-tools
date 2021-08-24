@@ -32,10 +32,10 @@ export default function IndexPage() {
                                         >
                                             <H3>Point &amp; Click</H3>
                                             <p>
-                                                Discover point &amp; click
-                                                environments to set up and run
-                                                experiments with commonly used
-                                                models
+                                                Use our curated point &amp;
+                                                click environments to set up and
+                                                run experiments with commonly
+                                                used models
                                             </p>
                                         </Col>
                                         <Col
