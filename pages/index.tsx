@@ -9,6 +9,8 @@ import Link from "next/link";
 
 import Header from "../components/Header";
 
+import styles from "./index.module.css";
+
 export default function IndexPage() {
     return (
         <>
@@ -18,7 +20,7 @@ export default function IndexPage() {
                 <Row>
                     <Col xs={6}>
                         <Link href="/point-and-click">
-                            <a>
+                            <a className={styles.cardLink}>
                                 <Card interactive style={{ padding: 0 }}>
                                     <Row disableDefaultMargins>
                                         <Col
@@ -59,8 +61,8 @@ export default function IndexPage() {
                         </Link>
                     </Col>
                     <Col xs={6}>
-                        <Link href="/coding">
-                            <a>
+                        <Link href="/code-notebooks">
+                            <a className={styles.cardLink}>
                                 <Card interactive style={{ padding: 0 }}>
                                     <Row disableDefaultMargins>
                                         <Col

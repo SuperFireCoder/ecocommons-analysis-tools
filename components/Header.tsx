@@ -12,8 +12,8 @@ export default function Header({
             label: "Point & Click",
         },
         {
-            key: "coding",
-            href: "/coding",
+            key: "code-notebooks",
+            href: "/code-notebooks",
             label: "Notebooks & Command Line",
         },
         // {
@@ -38,7 +38,7 @@ export default function Header({
                 ECOCOMMONS_TOOLS_FUNCTIONS:
                     process.env
                         .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_TOOLS_FUNCTIONS ??
-                    "#",
+                    "/",
                 ECOCOMMONS_VIRTUAL_LABORATORIES:
                     process.env
                         .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_VIRTUAL_LABORATORIES ??

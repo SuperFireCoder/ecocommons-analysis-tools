@@ -11,7 +11,7 @@ import Header from "../../components/Header";
 export default function PointAndClickIndexPage() {
     return (
         <>
-            <HtmlHead />
+            <HtmlHead title="Point &amp; Click" />
             <Header activeTab="functions" subBarActiveKey="point-and-click" />
             <FixedContainer>
                 <Row>
