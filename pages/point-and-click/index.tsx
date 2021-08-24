@@ -33,11 +33,16 @@ export default function PointAndClickIndexPage() {
                                         aspectRatio: "16 / 9",
                                     }}
                                 />
-                                <H3>BCCVL</H3>
+                                <H3>
+                                    Biodiversity and Climate Change Virtual
+                                    Laboratory (BCCVL)
+                                </H3>
                                 <p>
-                                    Discover point &amp; click environments to
-                                    set up and run experiments with commonly
-                                    used models
+                                    Run a variety of models and analyses,
+                                    including Species and Multi-species
+                                    Distributions, Species Traits, Climate
+                                    Change Projections, Biodiverse Experiments
+                                    and perform Ensemble Analyses.
                                 </p>
                             </Card>
                         </a>
