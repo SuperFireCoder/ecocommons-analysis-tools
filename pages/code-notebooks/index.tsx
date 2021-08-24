@@ -35,8 +35,8 @@ export default function CodeNotebooksIndexPage() {
     ] = useState<number>(0);
     const [actionInProgress, setActionInProgress] = useState<boolean>(false);
     const [servers, setServers] = useState<
-        readonly AnalysisPlaygroundServerResponse[]
-    >([]);
+        undefined | readonly AnalysisPlaygroundServerResponse[]
+    >(undefined);
     const [kernels, setKernels] = useState<readonly AnalysisPlaygroundKernel[]>(
         []
     );
@@ -217,7 +217,7 @@ export default function CodeNotebooksIndexPage() {
                                 <H1>Servers</H1>
                             </Col>
                         </Row>
-                        {servers.length === 0 && (
+                        {servers && servers.length === 0 && (
                             <Row>
                                 <Col xs={12}>
                                     <p className={Classes.TEXT_DISABLED}>
@@ -245,7 +245,7 @@ export default function CodeNotebooksIndexPage() {
                                 </Col>
                             </Row>
                         )}
-                        {servers.length > 0 && (
+                        {servers && servers.length > 0 && (
                             <Row>
                                 <Col xs={12}>
                                     <ServerTable
