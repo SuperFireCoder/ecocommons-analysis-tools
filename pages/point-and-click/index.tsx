@@ -8,6 +8,8 @@ import {
 
 import Header from "../../components/Header";
 
+import stylesIndex from "../index.module.css";
+
 export default function PointAndClickIndexPage() {
     return (
         <>
@@ -21,7 +23,7 @@ export default function PointAndClickIndexPage() {
                 </Row>
                 <Row>
                     <Col xs={4}>
-                        <a href="#">
+                        <a className={stylesIndex.cardLink} href="#">
                             <Card interactive>
                                 <img
                                     src="https://w7vfwul3.dreamwp.com/wp-content/uploads/2016/06/BCCVL_Logo_Horizontal_RGB.png"

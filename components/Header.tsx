@@ -1,4 +1,4 @@
-import { ComponentProps, useMemo } from "react";
+import { ComponentProps } from "react";
 import { Header as EcHeader } from "@ecocommons-australia/ui-library";
 import SignInOutButton from "./SignInOutButton";
 
