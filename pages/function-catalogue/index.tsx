@@ -7,7 +7,7 @@ export default function FunctionCatalogueIndexPage() {
         <>
             <HtmlHead title="Function Catalogue" />
             <Header
-                activeTab="functions"
+                activeTab="analysis-hub"
                 subBarActiveKey="function-catalogue"
             />
             <FixedContainer></FixedContainer>

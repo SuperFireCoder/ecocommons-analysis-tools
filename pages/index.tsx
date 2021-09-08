@@ -15,7 +15,7 @@ export default function IndexPage() {
     return (
         <>
             <HtmlHead />
-            <Header activeTab="functions" />
+            <Header activeTab="analysis-hub" />
             <FixedContainer>
                 <Row>
                     <Col xs={6}>

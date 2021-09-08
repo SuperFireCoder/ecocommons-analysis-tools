@@ -14,7 +14,10 @@ export default function PointAndClickIndexPage() {
     return (
         <>
             <HtmlHead title="Point &amp; Click" />
-            <Header activeTab="functions" subBarActiveKey="point-and-click" />
+            <Header
+                activeTab="analysis-hub"
+                subBarActiveKey="point-and-click"
+            />
             <FixedContainer>
                 <Row>
                     <Col xs={12}>

@@ -31,17 +31,17 @@ export default function Header({
                 ECOCOMMONS_ROOT:
                     process.env.NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_ROOT ??
                     "#",
-                ECOCOMMONS_DATA_VISUALISATIONS:
+                ECOCOMMONS_WORKSPACE:
                     process.env
-                        .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_DATA_VISUALISATIONS ??
+                        .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_WORKSPACE ??
                     "#",
-                ECOCOMMONS_TOOLS_FUNCTIONS:
+                ECOCOMMONS_DATASETS:
                     process.env
-                        .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_TOOLS_FUNCTIONS ??
-                    "/",
-                ECOCOMMONS_VIRTUAL_LABORATORIES:
+                        .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_DATASETS ??
+                    "#",
+                ECOCOMMONS_ANALYSIS_HUB:
                     process.env
-                        .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_VIRTUAL_LABORATORIES ??
+                        .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_ANALYSIS_HUB ??
                     "#",
             }}
             subBarLinks={subBarLinks}
