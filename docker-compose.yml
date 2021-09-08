@@ -17,12 +17,23 @@ services:
   app:
     build:
       context: .
+      dockerfile: Dockerfile
+      target: builder
+      args:
+        BASE_IMAGE: node:12
+        NODE_ENV: development
+        BUILD_DIR: ${BUILD_DIR}
+        NPM_AUTHTOKEN: ${NPM_AUTHTOKEN}
     command: npm run dev
     restart: unless-stopped
     volumes:
-      - ./tests:/srv/app/tests
-      - ./pages:/srv/app/pages
-      - ./components:/srv/app/components
-      - ./util:/srv/app/util
+      - ./.env.development:${BUILD_DIR}/.env.development
+      - ./components:${BUILD_DIR}/components
+      - ./hooks:${BUILD_DIR}/hooks
+      - ./interfaces:${BUILD_DIR}/interfaces
+      - ./pages:${BUILD_DIR}/pages
+      - ./public:${BUILD_DIR}/public
+      - ./tests:${BUILD_DIR}/tests
+      - ./util:${BUILD_DIR}/util
     networks:
       backend:
