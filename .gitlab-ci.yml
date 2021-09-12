@@ -34,7 +34,7 @@ build image:
   stage: build
   script:
     - echo "building ${IMAGE_SHORT_SHA}"
-    #- cat ${DOT_ENV_DOT_LOCAL_ECOCOMMONS_DEV} > .env.local
+    - cat ${DOT_ENV_DOT_LOCAL_ECOCOMMONS_DEV} > .env.local
     - docker pull ${IMAGE_SHORT_SHA} || true
     - docker build --tag ${IMAGE_SHORT_SHA} --build-arg NPM_AUTHTOKEN=$CI_JOB_TOKEN --build-arg NODE_ENV=production .
     - docker push ${IMAGE_SHORT_SHA}
