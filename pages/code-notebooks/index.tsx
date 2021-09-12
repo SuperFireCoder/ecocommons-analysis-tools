@@ -208,7 +208,7 @@ export default function CodeNotebooksIndexPage() {
     return (
         <>
             <HtmlHead title="Notebooks &amp; Command Line" />
-            <Header activeTab="functions" subBarActiveKey="code-notebooks" />
+            <Header activeTab="analysis-hub" subBarActiveKey="code-notebooks" />
             <FixedContainer>
                 {keycloakToken ? (
                     <>
