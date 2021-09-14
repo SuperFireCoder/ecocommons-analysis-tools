@@ -28,7 +28,7 @@ import ServerTable from "../../components/ServerTable";
 
 const SERVER_STATUS_REFRESH_INTERVAL = 5000;
 
-export default function CodeNotebooksIndexPage() {
+export default function CodingCloudIndexPage() {
     const [
         fetchServerStatusForceUpdateFlag,
         setFetchServerStatusForceUpdateFlag,
@@ -207,14 +207,14 @@ export default function CodeNotebooksIndexPage() {
 
     return (
         <>
-            <HtmlHead title="Notebooks &amp; Command Line" />
-            <Header activeTab="analysis-hub" subBarActiveKey="code-notebooks" />
+            <HtmlHead title={["Analysis Hub", "Coding Cloud"]} />
+            <Header activeTab="analysis-hub" subBarActiveKey="coding-cloud" />
             <FixedContainer>
                 {keycloakToken ? (
                     <>
                         <Row>
                             <Col xs={12}>
-                                <H1>Servers</H1>
+                                <H1>Coding Cloud servers</H1>
                             </Col>
                         </Row>
                         {servers && servers.length === 0 && (
@@ -262,8 +262,8 @@ export default function CodeNotebooksIndexPage() {
                     <Row>
                         <Col>
                             <Callout intent="warning" title="Sign in required">
-                                Please sign in before using the Notebooks &amp;
-                                Command Line Environment.
+                                Please sign in before using the Coding Cloud
+                                environment.
                             </Callout>
                         </Col>
                     </Row>

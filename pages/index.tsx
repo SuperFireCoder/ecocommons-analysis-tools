@@ -14,12 +14,12 @@ import styles from "./index.module.css";
 export default function IndexPage() {
     return (
         <>
-            <HtmlHead />
+            <HtmlHead title={["Analysis Hub"]} />
             <Header activeTab="analysis-hub" />
             <FixedContainer>
                 <Row>
                     <Col xs={6}>
-                        <Link href="/point-and-click">
+                        <Link href="/modelling-wizards">
                             <a className={styles.cardLink}>
                                 <Card interactive style={{ padding: 0 }}>
                                     <Row disableDefaultMargins>
@@ -30,7 +30,7 @@ export default function IndexPage() {
                                                 padding: "20px 0 20px 30px",
                                             }}
                                         >
-                                            <H3>Point &amp; Click</H3>
+                                            <H3>Modelling Wizards</H3>
                                             <p>
                                                 Use our curated point &amp;
                                                 click environments to set up and
@@ -61,7 +61,7 @@ export default function IndexPage() {
                         </Link>
                     </Col>
                     <Col xs={6}>
-                        <Link href="/code-notebooks">
+                        <Link href="/coding-cloud">
                             <a className={styles.cardLink}>
                                 <Card interactive style={{ padding: 0 }}>
                                     <Row disableDefaultMargins>
@@ -72,9 +72,7 @@ export default function IndexPage() {
                                                 padding: "20px 0 20px 30px",
                                             }}
                                         >
-                                            <H3>
-                                                Notebooks &amp; Command Line
-                                            </H3>
+                                            <H3>Coding Cloud</H3>
                                             <p>
                                                 Enter our online Jupyter
                                                 environment where you can code

@@ -10,23 +10,30 @@ import Header from "../../components/Header";
 
 import stylesIndex from "../index.module.css";
 
-export default function PointAndClickIndexPage() {
+export default function ModellingWizardsIndexPage() {
     return (
         <>
-            <HtmlHead title="Point &amp; Click" />
+            <HtmlHead title={["Analysis Hub", "Modelling Wizards"]} />
             <Header
                 activeTab="analysis-hub"
-                subBarActiveKey="point-and-click"
+                subBarActiveKey="modelling-wizards"
             />
             <FixedContainer>
                 <Row>
                     <Col xs={12}>
-                        <H1>Point &amp; Click Environments</H1>
+                        <H1>Modelling Wizards</H1>
                     </Col>
                 </Row>
                 <Row>
                     <Col xs={4}>
-                        <a className={stylesIndex.cardLink} href="#">
+                        <a
+                            className={stylesIndex.cardLink}
+                            href={
+                                process.env
+                                    .NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BCCVL_URL ??
+                                "#"
+                            }
+                        >
                             <Card interactive>
                                 <img
                                     src="https://w7vfwul3.dreamwp.com/wp-content/uploads/2016/06/BCCVL_Logo_Horizontal_RGB.png"

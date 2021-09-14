@@ -7,14 +7,14 @@ import SignInOutButton from "./SignInOutButton";
 export default function Header({
     subBarLinks = [
         {
-            key: "point-and-click",
-            href: "/point-and-click",
-            label: "Point & Click",
+            key: "modelling-wizards",
+            href: "/modelling-wizards",
+            label: "Modelling Wizards",
         },
         {
-            key: "code-notebooks",
-            href: "/code-notebooks",
-            label: "Notebooks & Command Line",
+            key: "coding-cloud",
+            href: "/coding-cloud",
+            label: "Coding Cloud",
         },
         // {
         //     key: "function-catalogue",
