@@ -1,6 +1,6 @@
-import getConfig from 'next/config'
+import getConfig from "next/config";
 
-const config = getConfig()
+const config = getConfig();
 
 export function getAnalysisPlaygroundBackendServerUrl() {
     return config.publicRuntimeConfig
