@@ -36,15 +36,15 @@ export default function Header({
                         .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_ROOT ??
                     "#",
                 ECOCOMMONS_WORKSPACE:
-                    process.env
+                    config.publicRuntimeConfig
                         .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_WORKSPACE ??
                     "#",
                 ECOCOMMONS_DATASETS:
-                    process.env
+                    config.publicRuntimeConfig
                         .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_DATASETS ??
                     "#",
                 ECOCOMMONS_ANALYSIS_HUB:
-                    process.env
+                    config.publicRuntimeConfig
                         .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_ANALYSIS_HUB ??
                     "#",
             }}
