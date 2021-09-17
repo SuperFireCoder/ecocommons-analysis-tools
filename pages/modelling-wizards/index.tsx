@@ -10,6 +10,10 @@ import Header from "../../components/Header";
 
 import stylesIndex from "../index.module.css";
 
+import getConfig from "next/config";
+
+const config = getConfig();
+
 export default function ModellingWizardsIndexPage() {
     return (
         <>
@@ -29,7 +33,7 @@ export default function ModellingWizardsIndexPage() {
                         <a
                             className={stylesIndex.cardLink}
                             href={
-                                process.env
+                                config.publicRuntimeConfig
                                     .NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BCCVL_URL ??
                                 "#"
                             }
