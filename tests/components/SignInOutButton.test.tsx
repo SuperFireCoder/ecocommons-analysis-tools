@@ -15,6 +15,13 @@ jest.mock("../../util/keycloak", () => ({
     useKeycloakInfo: jest.fn(() => defaultKeycloakInfo),
 }));
 
+afterEach(() => {
+    // Reset mocks
+    keycloakUtil.useKeycloakInfo
+        .mockReset()
+        .mockImplementation(() => defaultKeycloakInfo);
+});
+
 describe("SignInOutButton", () => {
     it("renders correct state when signed out", () => {
         const button = render(<SignInOutButton />);
@@ -26,6 +33,9 @@ describe("SignInOutButton", () => {
         const signInKeycloakInfo = {
             keycloak: {
                 authenticated: true,
+                tokenParsed: {
+                    given_name: "TEST_GIVEN_NAME",
+                },
             },
             initialized: true,
         };
@@ -34,7 +44,9 @@ describe("SignInOutButton", () => {
         );
 
         const button = render(<SignInOutButton />);
-        expect(button.container.textContent).toBe("Sign out");
+        expect(button.container.textContent).toBe(
+            "userTEST_GIVEN_NAMEcaret-down"
+        );
 
         // Restore mock
         kcMock.mockRestore();
