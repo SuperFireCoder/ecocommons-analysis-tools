@@ -3,7 +3,7 @@ import { AppProps, AppContext } from "next/app";
 import Link from "next/link";
 import { IncomingMessage } from "http";
 import { SSRKeycloakProvider, SSRCookies } from "@react-keycloak/ssr";
-import { LinkContext } from "@ecocommons-australia/ui-library";
+import { LinkContext, ThemeConfig, buildThemeWrapper } from "@ecocommons-australia/ui-library";
 
 import { getKeycloakAuthParameters } from "../util/env";
 
@@ -18,19 +18,25 @@ interface Props extends AppProps {
     cookies: unknown;
 }
 
+const theme: ThemeConfig = {};
+
 function MyApp({ Component, pageProps, cookies }: Props) {
     /** react-keycloak configuration */
     const keycloakConfig = getKeycloakAuthParameters();
 
+    const ThemeWrapper = buildThemeWrapper(theme);
+
     return (
-        <LinkContext.Provider value={{ Link }}>
-            <SSRKeycloakProvider
-                keycloakConfig={keycloakConfig}
-                persistor={SSRCookies(cookies)}
-            >
-                <Component {...pageProps} />
-            </SSRKeycloakProvider>
-        </LinkContext.Provider>
+        <ThemeWrapper>
+            <LinkContext.Provider value={{ Link }}>
+                <SSRKeycloakProvider
+                    keycloakConfig={keycloakConfig}
+                    persistor={SSRCookies(cookies)}
+                >
+                    <Component {...pageProps} />
+                </SSRKeycloakProvider>
+            </LinkContext.Provider>
+        </ThemeWrapper>
     );
 }
 
