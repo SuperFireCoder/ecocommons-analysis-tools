@@ -56,5 +56,5 @@ export default function _Header({
 
 
 export const Header = applyThemeValuesToPropsHoc({
-    subBarLinks: "Map::AnalysisTools.HeaderSubBarLinks",
+    subBarLinks: "Map::AnalysisTools.HeaderSubBarLinks" as unknown as undefined,
 }, _Header);
