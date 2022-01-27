@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import { Header as EcHeader } from "@ecocommons-australia/ui-library";
+import { Header as EcHeader, applyThemeValuesToPropsHoc } from "@ecocommons-australia/ui-library";
 import SignInOutButton from "./SignInOutButton";
 import getConfig from "next/config";
 
@@ -7,7 +7,7 @@ const config = getConfig();
 
 // This <Header /> injects the <SignInOutButton /> specific to this site
 
-export default function Header({
+export default function _Header({
     subBarLinks = [
         {
             key: "modelling-wizards",
@@ -53,3 +53,8 @@ export default function Header({
         />
     );
 }
+
+
+export const Header = applyThemeValuesToPropsHoc({
+    subBarLinks: "Map::AnalysisTools.HeaderSubBarLinks",
+}, _Header);
