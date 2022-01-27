@@ -55,7 +55,6 @@ export default function ModellingWizardsIndexPage() {
         }
     }
 
-    // TODO: will need a wrapping layout here as fixed col/row aint no good
     if (cards.length > 0){
         return (
             <>
