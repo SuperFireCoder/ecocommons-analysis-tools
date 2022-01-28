@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import { Header as EcHeader, applyThemeValuesToPropsHoc } from "@ecocommons-australia/ui-library";
+import { Header as EcHeader, useTheme } from "@ecocommons-australia/ui-library";
 import SignInOutButton from "./SignInOutButton";
 import getConfig from "next/config";
 
@@ -7,7 +7,7 @@ const config = getConfig();
 
 // This <Header /> injects the <SignInOutButton /> specific to this site
 
-export default function _Header({
+export default function Header({
     subBarLinks = [
         {
             key: "modelling-wizards",
@@ -27,6 +27,10 @@ export default function _Header({
     ],
     ...props
 }: Omit<ComponentProps<typeof EcHeader>, "tabLinks">) {
+    const { getThemeValue } = useTheme();
+
+    subBarLinks = getThemeValue("Map::AnalysisTools.HeaderSubBarLinks") ?? subBarLinks;
+
     return (
         <EcHeader
             signInOutButton={<SignInOutButton />}
@@ -53,8 +57,3 @@ export default function _Header({
         />
     );
 }
-
-
-export const Header = applyThemeValuesToPropsHoc({
-    subBarLinks: "Map::AnalysisTools.HeaderSubBarLinks" as unknown as undefined,
-}, _Header);

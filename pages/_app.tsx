@@ -13,12 +13,13 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 
 import "@ecocommons-australia/ui-library/src/styles/global.css";
 
+import { theme } from "../themes/default/theme";
+import "../themes/default/styles/global.css";
+
 interface Props extends AppProps {
     /** Cookies in request */
     cookies: unknown;
 }
-
-const theme: ThemeConfig = {};
 
 function MyApp({ Component, pageProps, cookies }: Props) {
     /** react-keycloak configuration */
