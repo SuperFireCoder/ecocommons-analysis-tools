@@ -9,6 +9,7 @@ import {
 
 import { Page, Workflow } from "../../interfaces/Theme";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 import stylesIndex from "../index.module.css";
 
@@ -89,6 +90,7 @@ export default function ModellingWizardsIndexPage() {
                     {cards}
                 </Row>
             </FixedContainer>
+            <Footer/>
         </>
     )
 
