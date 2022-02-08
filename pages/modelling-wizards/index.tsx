@@ -2,6 +2,7 @@ import { Card, H1, H3 } from "@blueprintjs/core";
 import {
     Col,
     FixedContainer,
+    Footer,
     HtmlHead,
     Row,
     useTheme,
@@ -9,7 +10,6 @@ import {
 
 import { Page, Workflow } from "../../interfaces/Theme";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 
 import stylesIndex from "../index.module.css";
 

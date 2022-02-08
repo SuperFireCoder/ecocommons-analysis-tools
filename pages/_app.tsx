@@ -3,7 +3,7 @@ import { AppProps, AppContext } from "next/app";
 import Link from "next/link";
 import { IncomingMessage } from "http";
 import { SSRKeycloakProvider, SSRCookies } from "@react-keycloak/ssr";
-import { LinkContext, ThemeConfig, buildThemeWrapper } from "@ecocommons-australia/ui-library";
+import { LinkContext, buildThemeWrapper } from "@ecocommons-australia/ui-library";
 
 import { getKeycloakAuthParameters } from "../util/env";
 
