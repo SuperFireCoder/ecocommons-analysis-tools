@@ -2,6 +2,7 @@ import { Card, H3, Icon } from "@blueprintjs/core";
 import {
     Col,
     FixedContainer,
+    Footer,
     HtmlHead,
     Row,
 } from "@ecocommons-australia/ui-library";
@@ -116,6 +117,7 @@ export default function IndexPage() {
                     </Col>
                 </Row> */}
             </FixedContainer>
+            <Footer/>
         </>
     );
 }
