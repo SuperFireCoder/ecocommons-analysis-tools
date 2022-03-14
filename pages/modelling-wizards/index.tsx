@@ -8,7 +8,7 @@ import {
     useTheme,
 } from "@ecocommons-australia/ui-library";
 
-import { Page, Workflow } from "../../interfaces/Theme";
+import { Page, WorkflowCard } from "../../interfaces/Theme";
 import Header from "../../components/Header";
 
 import stylesIndex from "../index.module.css";
@@ -23,14 +23,14 @@ export default function ModellingWizardsIndexPage() {
     const links = getThemeValue("Map::AnalysisTools.HeaderSubBarLinks") ?? [];
 
     const page: Page = links.find((p: Page) => p.key === 'modelling-wizards') ?? {
-            key: "modelling-wizards",
-            href: "/modelling-wizards",
-            label: "Modelling Wizards",
-        };
+        key: "modelling-wizards",
+        href: "/modelling-wizards",
+        label: "Modelling Wizards",
+    };
 
-    var workflows: Workflow[] = getThemeValue("Map::AnalysisTools.Workflows");
+    var workflows: WorkflowCard[] | undefined = getThemeValue("Map::AnalysisTools.Workflows");
 
-    workflows.forEach(workflow => {
+    workflows && workflows.forEach(workflow => {
         if (! config.publicRuntimeConfig.hasOwnProperty(workflow.url)){
             return;
         }
@@ -41,7 +41,7 @@ export default function ModellingWizardsIndexPage() {
                 className={stylesIndex.cardLink}
                 href={ config.publicRuntimeConfig[workflow.url] ?? "#" }
             >
-                <Card interactive>
+                <Card interactive className={stylesIndex.card}>
                     <img
                         src={workflow.imagePath}
                         style={{

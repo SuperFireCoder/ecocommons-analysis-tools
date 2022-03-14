@@ -3,3 +3,7 @@ a.cardLink:hover {
     color: inherit;
     text-decoration: inherit;
 }
+
+.card {
+    height: 100%;
+}

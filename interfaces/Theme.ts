@@ -1,4 +1,4 @@
-export interface Workflow {
+export interface WorkflowCard {
     id: string;
     title: string;
     description: string;
