@@ -8,3 +8,4 @@ const nextPublicEnv = Object.fromEntries(
 module.exports = {
     publicRuntimeConfig: nextPublicEnv
 };
+
