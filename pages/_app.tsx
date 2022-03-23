@@ -6,6 +6,9 @@ import { SSRKeycloakProvider, SSRCookies } from "@react-keycloak/ssr";
 import { LinkContext } from "@ecocommons-australia/ui-library";
 
 import { getKeycloakAuthParameters } from "../util/env";
+import { useEffect } from "react";
+import router from "next/router";
+import * as gtag from "../util/gtag";
 
 // Blueprint required CSS
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
@@ -21,6 +24,15 @@ interface Props extends AppProps {
 function MyApp({ Component, pageProps, cookies }: Props) {
     /** react-keycloak configuration */
     const keycloakConfig = getKeycloakAuthParameters();
+    useEffect(() => {
+        const handleRouteChange = (url: URL) => {
+          gtag.pageview(url);
+        };
+        router.events.on("routeChangeComplete", handleRouteChange);
+        return () => {
+          router.events.off("routeChangeComplete", handleRouteChange);
+        };
+    }, [router.events]);
 
     return (
         <LinkContext.Provider value={{ Link }}>
