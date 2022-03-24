@@ -25,5 +25,9 @@ module.exports = {
 
         NEXT_PUBLIC_JUPYTERHUB_SERVER_URL:
             process.env.NEXT_PUBLIC_JUPYTERHUB_SERVER_URL,
+
+        NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID:
+            process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID,
+     
     },
 };
