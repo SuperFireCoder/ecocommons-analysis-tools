@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import { Header as EcHeader, useTheme } from "@ecocommons-australia/ui-library";
+import { Header as EcHeader, Constants as UiLibraryConstants, useTheme } from "@ecocommons-australia/ui-library";
 import SignInOutButton from "./SignInOutButton";
 import getConfig from "next/config";
 
@@ -50,6 +50,10 @@ export default function Header({
                 ECOCOMMONS_ANALYSIS_HUB:
                     config.publicRuntimeConfig
                         .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_ANALYSIS_HUB ??
+                    "#",
+                ECOCOMMONS_SUPPORT:
+                    config.publicRuntimeConfig
+                        .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_SUPPORT ??
                     "#",
             }}
             subBarLinks={subBarLinks}
