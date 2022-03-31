@@ -11,6 +11,7 @@ variables:
 
 stages:
   - test
+  - sonar
   - build
   - publish
 
@@ -31,7 +32,7 @@ unit test:
       junit: junit.xml
 
 sonarqube-check:
-  stage: test
+  stage: sonar
   image: 
     name: sonarsource/sonar-scanner-cli:latest
     entrypoint: [""]
@@ -45,6 +46,8 @@ sonarqube-check:
   script: 
     - sonar-scanner
   allow_failure: true
+  before_script:
+    - pwd
   only:
     - biosecurity-commons # or the name of your main branch
 
