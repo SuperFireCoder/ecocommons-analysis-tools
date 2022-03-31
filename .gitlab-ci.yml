@@ -49,7 +49,7 @@ sonarqube-check:
     - sonar-scanner
   allow_failure: true
   before_script:
-    - ls -latr /builds/ecocommons-australia/ecocommons-platform/analysis-tools-ui/coverage/clover.xml
+    - ls -latr /builds/ecocommons-australia/ecocommons-platform/analysis-tools-ui/coverage/lcov.info
   only:
     - biosecurity-commons # or the name of your main branch
   dependencies:
