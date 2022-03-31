@@ -31,7 +31,7 @@ unit test:
     reports:
       junit: junit.xml
     paths:
-      - /coverage/
+      - coverage
 
 sonarqube-check:
   stage: sonar
