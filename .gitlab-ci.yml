@@ -49,7 +49,7 @@ sonarqube-check:
     - sonar-scanner
   allow_failure: true
   before_script:
-    - find / -name "junit.xml" 2> /dev/null
+    - cat /builds/ecocommons-australia/ecocommons-platform/analysis-tools-ui/junit.xml
   only:
     - biosecurity-commons # or the name of your main branch
   dependencies:
