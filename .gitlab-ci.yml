@@ -30,6 +30,8 @@ unit test:
   artifacts:
     reports:
       junit: junit.xml
+    paths:
+      - junit.xml
 
 sonarqube-check:
   stage: sonar
@@ -50,6 +52,8 @@ sonarqube-check:
     - find / -name "junit.xml" 2> /dev/null
   only:
     - biosecurity-commons # or the name of your main branch
+  dependencies:
+    - unit test
 
 build image:
   stage: build
