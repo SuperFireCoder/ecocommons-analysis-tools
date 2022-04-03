@@ -3,7 +3,7 @@ import { AppProps, AppContext } from "next/app";
 import Link from "next/link";
 import { IncomingMessage } from "http";
 import { SSRKeycloakProvider, SSRCookies } from "@react-keycloak/ssr";
-import { LinkContext } from "@ecocommons-australia/ui-library";
+import { LinkContext, buildThemeWrapper } from "@ecocommons-australia/ui-library";
 
 import { getKeycloakAuthParameters } from "../util/env";
 import { useEffect } from "react";
@@ -15,6 +15,9 @@ import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 
 import "@ecocommons-australia/ui-library/src/styles/global.css";
+
+import { theme } from "../themes/default/theme";
+import "../themes/default/styles/global.css";
 
 interface Props extends AppProps {
     /** Cookies in request */
@@ -34,13 +37,17 @@ function MyApp({ Component, pageProps, cookies }: Props) {
         };
     }, [router.events]);
 
+    const ThemeWrapper = buildThemeWrapper(theme);
+
     return (
         <LinkContext.Provider value={{ Link }}>
             <SSRKeycloakProvider
                 keycloakConfig={keycloakConfig}
                 persistor={SSRCookies(cookies)}
             >
-                <Component {...pageProps} />
+                <ThemeWrapper>
+                    <Component {...pageProps} />
+                </ThemeWrapper>
             </SSRKeycloakProvider>
         </LinkContext.Provider>
     );

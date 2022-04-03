@@ -10,6 +10,7 @@ import {
 import {
     Col,
     FixedContainer,
+    Footer,
     HtmlHead,
     Row,
 } from "@ecocommons-australia/ui-library";
@@ -269,6 +270,7 @@ export default function CodingCloudIndexPage() {
                     </Row>
                 )}
             </FixedContainer>
+            <Footer/>
         </>
     );
 }
