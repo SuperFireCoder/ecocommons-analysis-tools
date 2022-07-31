@@ -22,11 +22,11 @@ export default function ModellingWizardsIndexPage() {
     const { getThemeValue } = useTheme();
 
     const workflows: WorkflowCard[] | undefined = getThemeValue(
-        "Map::AnalysisTools.Workflows"
+        "Object::AnalysisTools.Workflows"
     );
 
     const links = useMemo<readonly Page[]>(
-        () => getThemeValue("Map::AnalysisTools.HeaderSubBarLinks") ?? [],
+        () => getThemeValue("Object::AnalysisTools.HeaderSubBarLinks") ?? [],
         [getThemeValue]
     );
 

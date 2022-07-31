@@ -27,14 +27,13 @@ export default function Header({
     ],
     ...props
 }: Omit<ComponentProps<typeof EcHeader>, "tabLinks">) {
+    
     const { getThemeValue } = useTheme();
-
-    subBarLinks = getThemeValue("Map::AnalysisTools.HeaderSubBarLinks") ?? subBarLinks;
 
     return (
         <EcHeader
             signInOutButton={<SignInOutButton />}
-            tabLinks={{
+            tabLinks={getThemeValue("Object::Platform.HeaderTabLinks") ?? {
                 ECOCOMMONS_ROOT:
                     config.publicRuntimeConfig
                         .NEXT_PUBLIC_UI_LIBRARY_HEADER_ECOCOMMONS_ROOT ??
@@ -60,7 +59,7 @@ export default function Header({
                 config.publicRuntimeConfig.NEXT_PUBLIC_DEPLOYMENT !==
                 "production"
             }
-            subBarLinks={subBarLinks}
+            subBarLinks={getThemeValue("Object::AnalysisTools.HeaderSubBarLinks") ?? subBarLinks}
             {...props}
         />
     );
