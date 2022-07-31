@@ -24,6 +24,8 @@ interface Props extends AppProps {
     cookies: unknown;
 }
 
+const ThemeWrapper = buildThemeWrapper(theme);
+
 function MyApp({ Component, pageProps, cookies }: Props) {
     /** react-keycloak configuration */
     const keycloakConfig = getKeycloakAuthParameters();
@@ -36,8 +38,6 @@ function MyApp({ Component, pageProps, cookies }: Props) {
           router.events.off("routeChangeComplete", handleRouteChange);
         };
     }, [router.events]);
-
-    const ThemeWrapper = buildThemeWrapper(theme);
 
     return (
         <LinkContext.Provider value={{ Link }}>
