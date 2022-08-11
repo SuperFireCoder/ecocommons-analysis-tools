@@ -3,6 +3,9 @@
 
 const specTitle = require("cypress-sonarqube-reporter/specTitle");
 
+const MODELLING_WIZARDS_BCCVL_URL = Cypress.env('NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BCCVL_URL');
+const MODELLING_WIZARDS_BSRMAP_URL = Cypress.env('NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BSRMAP_URL');
+
 describe(specTitle('In order to use the analysis features; as a User; I should be able to find the options and see analysis progress'), () => {
     beforeEach(() => {
         cy.clearCookies()
@@ -29,9 +32,9 @@ describe(specTitle('In order to use the analysis features; as a User; I should b
     it('Modelling Wizards shows bccvl and risk mapping', () => {
         cy.visit('/');
         cy.get('a').contains('Modelling Wizards').click()
-        cy.get('a[href^="https://bccvl-job-composer.dev.ecocommons.org.au"]')
+        cy.get(`a[href^="${MODELLING_WIZARDS_BCCVL_URL}"]`)
             .should('contain', 'Biodiversity and Climate Change Virtual Laboratory')
-        cy.get('a[href^="https://workflow.dev.ecocommons.org.au/template?create=bsrmap"]')
+        cy.get(`a[href^="${MODELLING_WIZARDS_BSRMAP_URL}"]`)
             .should('contain', 'Risk Mapping')
     })
 
