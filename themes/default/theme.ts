@@ -25,5 +25,5 @@ const workflows: WorkflowCard[] = [
 ];
 
 export const theme: ThemeConfig = {
-    "Map::AnalysisTools.Workflows": workflows
+    "Object::AnalysisTools.Workflows": workflows
 }
