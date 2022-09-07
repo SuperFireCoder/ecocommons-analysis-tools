@@ -15,23 +15,51 @@ export class AnalysisPlayground {
 
     constructor(
         public readonly serverBaseUrl: string,
-        private readonly keycloakInstance: KeycloakInstance
+        private readonly keycloakInstance: KeycloakInstance | undefined
     ) {
-        this.axios = this.initNewAxiosInstance();
+        const { axiosInstance } = this.initNewAxiosInstance();
+
+        this.axios = axiosInstance;
     }
 
     public getAuthorizationHeaderValue() {
-        return `Bearer ${this.keycloakInstance.token}`;
+        const token = this.keycloakInstance?.token;
+
+        if (token === undefined) {
+            return undefined;
+        }
+
+        return `Bearer ${token}`;
     }
 
+
     private initNewAxiosInstance() {
-        return axios.create({
+        const axiosInstance = axios.create({
             baseURL: this.serverBaseUrl,
-            headers: {
-                Authorization: this.getAuthorizationHeaderValue(),
-            },
         });
+
+        const injectAuthHeaderInterceptor =
+            axiosInstance.interceptors.request.use((requestConfig) => {
+                const authHeader = this.getAuthorizationHeaderValue();
+
+                // If no auth value available, just pass request through
+                if (authHeader === undefined) {
+                    return requestConfig;
+                }
+
+                // Otherwise inject the auth header
+                return {
+                    ...requestConfig,
+                    headers: {
+                        ...requestConfig.headers,
+                        Authorization: authHeader,
+                    },
+                };
+            });
+
+        return { axiosInstance, injectAuthHeaderInterceptor };
     }
+
 
     private getNewAxiosCancellationToken() {
         return axios.CancelToken.source();

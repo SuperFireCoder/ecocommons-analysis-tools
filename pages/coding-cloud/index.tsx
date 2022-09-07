@@ -45,7 +45,7 @@ export default function CodingCloudIndexPage() {
 
     const { keycloak } = useKeycloakInfo();
     const keycloakToken = keycloak?.token;
-    const analysisPlayground = useAnalysisPlayground();
+    const {analysisPlayground, userSessionActive,} = useAnalysisPlayground();
 
     const forceServerStatusUpdate = useCallback(() => {
         setFetchServerStatusForceUpdateFlag((x) => x + 1);
