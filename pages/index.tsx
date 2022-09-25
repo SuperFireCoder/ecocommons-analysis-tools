@@ -27,22 +27,23 @@ export default function IndexPage() {
                                         <Col
                                             xs={8}
                                             style={{
-                                                height: "8rem",
+                                                height: "10rem",
                                                 padding: "20px 0 20px 30px",
                                             }}
                                         >
                                             <H3>Modelling Wizards</H3>
                                             <p>
                                                 Use our curated point &amp;
-                                                click environments to set up and
-                                                run experiments with commonly
-                                                used models
+                                                click dashboards to setup and run experiments
+                                                Currently available:<br/>
+                                                1. Bccvl wizard (Biodiversity and Climate Change Virtual Laboratory).<br/>
+                                                2. Biosecurity Risk Mapping.
                                             </p>
                                         </Col>
                                         <Col
                                             xs={4}
                                             style={{
-                                                height: "8rem",
+                                                height: "10rem",
                                                 overflow: "hidden",
                                                 color: "rgba(0,0,0,0.1)",
                                                 display: "flex",
@@ -75,10 +76,10 @@ export default function IndexPage() {
                                         >
                                             <H3>Coding Cloud</H3>
                                             <p>
-                                                Enter our online Jupyter
-                                                environment where you can code
-                                                using notebooks or directly on a
-                                                command line
+                                                Enter our online Jupyter 
+                                                environment where you can code 
+                                                using notebooks or directly on a command line. 
+                                                Currently supporting R, R Studio, Python and Julia.
                                             </p>
                                         </Col>
                                         <Col
