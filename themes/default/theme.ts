@@ -8,7 +8,7 @@ const workflows: WorkflowCard[] = [
         id: "BCCVL",
         title: "Biodiversity and Climate Change Virtual Laboratory (BCCVL)",
         description: `Run a variety of models and analyses, including 
-                            Species distribution models (SDM),s
+                            Species distribution models (SDM),
                             SDM climate projections, 
                             SDM ensemble, 
                             SDM for multiple species, 

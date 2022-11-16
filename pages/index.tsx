@@ -36,7 +36,7 @@ export default function IndexPage() {
                                                 Use our curated point &amp;
                                                 click dashboards to setup and run experiments
                                                 Currently available:<br/>
-                                                1. Bccvl wizard (Biodiversity and Climate Change Virtual Laboratory).<br/>
+                                                1. BCCVL wizard (Biodiversity and Climate Change Virtual Laboratory).<br/>
                                                 2. Biosecurity Risk Mapping.
                                             </p>
                                         </Col>
