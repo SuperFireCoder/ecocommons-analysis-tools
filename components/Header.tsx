@@ -14,11 +14,11 @@ export default function Header({
             href: "/modelling-wizards",
             label: "Modelling Wizards",
         },
-        {
-            key: "coding-cloud",
-            href: "/coding-cloud",
-            label: "Coding Cloud",
-        },
+        // {
+        //     key: "coding-cloud",
+        //     href: "/coding-cloud",
+        //     label: "Coding Cloud",
+        // },
         // {
         //     key: "function-catalogue",
         //     href: "/function-catalogue",
