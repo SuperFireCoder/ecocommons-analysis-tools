@@ -62,10 +62,10 @@ export default function IndexPage() {
                             </a>
                         </Link>
                     </Col>
-                    <Col xs={6}>
-                        <Link href="/coding-cloud">
+                    <Col xs={6} style={{ opacity: "0.5" }} title="Coming Soon!">
+                        <Link href="#">
                             <a className={styles.cardLink}>
-                                <Card interactive style={{ padding: 0 }}>
+                                <Card style={{ padding: 0 }} interactive={false} >
                                     <Row disableDefaultMargins>
                                         <Col
                                             xs={8}

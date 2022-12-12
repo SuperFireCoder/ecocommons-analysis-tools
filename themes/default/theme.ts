@@ -21,7 +21,7 @@ const workflows: WorkflowCard[] = [
         id: "BSRMAP",
         title: `Risk Mapping`,
         description: `Biosecurity Risk Mapping – Pest establishment likelihood: abiotic suitability, biotic suitability, Pest arrival probability`,
-        imagePath: "images/workflows/workflow_generic.png",
+        imagePath: "images/workflows/risk_mapping_sml.png",
         url: 'NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BSRMAP_URL',
     },
 ];
