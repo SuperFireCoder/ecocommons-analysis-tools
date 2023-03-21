@@ -13,39 +13,42 @@ WORKDIR $BUILD_DIR
 
 COPY package*.json ./
 
-RUN npm config set @ecocommons-australia:registry https://gitlab.com/api/v4/packages/npm/
-RUN npm config set '//gitlab.com/api/v4/packages/npm/:_authToken' $NPM_AUTHTOKEN
-
-RUN npm ci
-
-COPY . .
+RUN npm config set @ecocommons-australia:registry https://gitlab.com/api/v4/packages/npm/ && \
+    npm config set '//gitlab.com/api/v4/packages/npm/:_authToken' $NPM_AUTHTOKEN && \
+    npm ci --no-optional
 
 EXPOSE 3000
 
 CMD npm run start
 
+
 # build builder-* stages with "devDependencies" (needed for TS)
 FROM base as builder
 
+COPY . .
+
 # Disable Next.js telemetry
 # https://nextjs.org/telemetry
-RUN npx next telemetry disable
-
-RUN npm run build
+RUN npx next telemetry disable && \
+    npm run build
 
 # release stage uses app with only "dependencies" installed if NODE_ENV=production
 FROM builder as release
 
 ARG NODE_ENV
 ARG BUILD_DIR
+ARG BUILD_ID
 
-COPY --from=builder $BUILD_DIR/.next ./.next
+COPY --chown=node:node --from=builder $BUILD_DIR/.next ./.next
+
+# exposed to client
+ENV NEXT_PUBLIC_BUILD_ID=$BUILD_ID
 
 # set ARG here as build will fail without TS dependencies if NODE_ENV=production
 ENV NODE_ENV=$NODE_ENV
 
 # only use dependencies required by NODE_ENV
-RUN npm ci
+RUN npm ci --no-optional
 
 RUN chown -R node:node ./ 
 USER node
