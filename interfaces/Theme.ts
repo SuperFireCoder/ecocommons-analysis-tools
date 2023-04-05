@@ -4,6 +4,8 @@ export interface WorkflowCard {
     description: string;
     url: string;
     imagePath: string;
+    category: String;
+    categoryColor: string
 }
 
 export interface Page {

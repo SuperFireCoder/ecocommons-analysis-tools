@@ -9,11 +9,11 @@ const config = getConfig();
 
 export default function Header({
     subBarLinks = [
-        {
-            key: "modelling-wizards",
-            href: "/modelling-wizards",
-            label: "Modelling Wizards",
-        },
+        // {
+        //     key: "modelling-wizards",
+        //     href: "/modelling-wizards",
+        //     label: "Modelling Wizards",
+        // },
         // {
         //     key: "coding-cloud",
         //     href: "/coding-cloud",

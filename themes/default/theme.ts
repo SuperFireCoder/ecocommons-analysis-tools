@@ -15,7 +15,9 @@ const workflows: WorkflowCard[] = [
                             migratory SDMs (i.e. monthly), 
                             Species trait modelling.`,
         imagePath: "https://w7vfwul3.dreamwp.com/wp-content/uploads/2016/06/BCCVL_Logo_Horizontal_RGB.png",
-        url: "NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BCCVL_URL"
+        url: "NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BCCVL_URL",
+        category: "Modelling Wizard",
+        categoryColor: "#6CC4A1"
     },
     {
         id: "BSRMAP",
@@ -23,6 +25,17 @@ const workflows: WorkflowCard[] = [
         description: `Biosecurity Risk Mapping – Pest establishment likelihood: abiotic suitability, biotic suitability, Pest arrival probability`,
         imagePath: "images/workflows/risk_mapping_sml.png",
         url: 'NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BSRMAP_URL',
+        category: "Modelling Wizard",
+        categoryColor: "#6CC4A1"
+    },
+    {
+        id: "CC",
+        title: `Coding Cloud`,
+        description: `Use a command-line environment based on JupyterHub to run scripts in R, Python or Julia in the cloud without the need to install anything.`,
+        imagePath: "images/workflows/console_icon.png",
+        url: 'NEXT_PUBLIC_CLOUD_LOAD',
+        category: "Command-Line Environment",
+        categoryColor: "#50e0ff"
     },
 ];
 
