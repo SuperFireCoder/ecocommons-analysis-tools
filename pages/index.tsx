@@ -54,7 +54,8 @@ export default function AnalysisHubIndexPage() {
                         // href={"./coding-cloud"}
                     >
                         <Card interactive className={stylesIndex.card}>
-                            <H3 style={{ color: workflow.categoryColor }}>{workflow.category}</H3>
+                            <span style={{ position: "absolute", top: "0px", right: "8px", backgroundColor:  workflow.categoryColor, color: "white", padding: "4px" }}>{workflow.category}</span>
+                            <br></br>
                             <img
                                 src={workflow.imagePath}
                                 style={{
