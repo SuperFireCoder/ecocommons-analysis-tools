@@ -29,7 +29,7 @@ describe(specTitle('In order to use the analysis features; as a User; I should b
     it('Analysis Hub Index Page should shows bccvl, risk mapping and coding cloud', () => {
         cy.visit('/');
         cy.get(`a[href^="${MODELLING_WIZARDS_BCCVL_URL}"]`)
-            .should('contain', 'Biodiversity and Climate Change Virtual Laboratory')
+            .should('contain', 'BCCVL')
         cy.get(`a[href^="${MODELLING_WIZARDS_BSRMAP_URL}"]`)
             .should('contain', 'Risk Mapping')
         cy.get(`a[href^="${CODING_CLOUD_URL}"]`)
