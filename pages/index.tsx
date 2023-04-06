@@ -1,4 +1,4 @@
-import { Card, H3, Icon, H2 } from "@blueprintjs/core";
+import { Card, H3, Icon, H2, Tag, Intent} from "@blueprintjs/core";
 import {
     Col,
     FixedContainer,
@@ -54,7 +54,7 @@ export default function AnalysisHubIndexPage() {
                         // href={"./coding-cloud"}
                     >
                         <Card interactive className={stylesIndex.card}>
-                            <span style={{ position: "absolute", top: "0px", right: "8px", backgroundColor:  workflow.categoryColor, color: "white", padding: "4px" }}>{workflow.category}</span>
+                            <Tag intent={Intent.PRIMARY} style={{ backgroundColor: workflow.categoryColor, position: "absolute", top: 0, right: "8px" }}>{workflow.category}</Tag>
                             <br></br>
                             <img
                                 src={workflow.imagePath}
