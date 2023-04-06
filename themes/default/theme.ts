@@ -33,7 +33,7 @@ const workflows: WorkflowCard[] = [
         title: `Coding Cloud`,
         description: `Use a command-line environment based on JupyterHub to run scripts in R, Python or Julia in the cloud without the need to install anything.`,
         imagePath: "images/workflows/console_icon.png",
-        url: 'NEXT_PUBLIC_CLOUD_LOAD',
+        url: 'NEXT_PUBLIC_ANALYSIS_TOOLS_CODING_CLOUD',
         category: "Command-Line Environment",
         categoryColor: "#50e0ff"
     },

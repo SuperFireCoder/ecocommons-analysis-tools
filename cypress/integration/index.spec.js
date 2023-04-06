@@ -5,7 +5,7 @@ const specTitle = require("cypress-sonarqube-reporter/specTitle");
 
 const MODELLING_WIZARDS_BCCVL_URL = Cypress.env('NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BCCVL_URL');
 const MODELLING_WIZARDS_BSRMAP_URL = Cypress.env('NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BSRMAP_URL');
-const CODING_CLOUD_URL = Cypress.env('NEXT_PUBLIC_CLOUD_LOAD');
+const CODING_CLOUD_URL = Cypress.env('NEXT_PUBLIC_ANALYSIS_TOOLS_CODING_CLOUD');
 
 describe(specTitle('In order to use the analysis features; as a User; I should be able to find the options and see analysis progress'), () => {
     beforeEach(() => {
