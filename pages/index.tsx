@@ -1,124 +1,87 @@
-import { Card, H3, Icon } from "@blueprintjs/core";
+import { Card, H3, Icon, H2, Tag, Intent} from "@blueprintjs/core";
 import {
     Col,
     FixedContainer,
     Footer,
     HtmlHead,
     Row,
+    useTheme
 } from "@ecocommons-australia/ui-library";
+
+import { useMemo } from "react";
+
+import { Page, WorkflowCard } from "../interfaces/Theme";
+
 import Link from "next/link";
 
 import Header from "../components/Header";
 
 import styles from "./index.module.css";
 
-export default function IndexPage() {
+import stylesIndex from "./index.module.css";
+
+import getConfig from "next/config";
+
+const config = getConfig();
+
+export default function AnalysisHubIndexPage() {
+    const { getThemeValue } = useTheme();
+
+    const workflows: WorkflowCard[] | undefined = getThemeValue(
+        "Object::AnalysisTools.Workflows"
+    );
+
+    const cards = useMemo(() => {
+        if (!workflows) {
+            return [];
+        }
+
+        return workflows.map((workflow) => {
+            // Workflows defined in `theme.ts` have the env var lookup key
+            // encoded in `url`
+            //
+            // If no env var exists for the given key, then return `null` for
+            // this card - this will cause it not to be rendered by React
+            if (!config.publicRuntimeConfig.hasOwnProperty(workflow.url)) {
+                return null;
+            }
+
+            return (
+                <Col xs={4} key={`Workflow_${workflow.id}`}>
+                    <a
+                        className={stylesIndex.cardLink}
+                        href={config.publicRuntimeConfig[workflow.url] ?? "#"}
+                        // href={"./coding-cloud"}
+                    >
+                        <Card interactive className={stylesIndex.card}>
+                            <Tag intent={Intent.PRIMARY} style={{ backgroundColor: workflow.categoryColor, position: "absolute", top: 0, right: "8px" }}>{workflow.category}</Tag>
+                            <br></br>
+                            <img
+                                src={workflow.imagePath}
+                                style={{
+                                    objectFit: "contain",
+                                    width: "100%",
+                                    aspectRatio: "16 / 9",
+                                }}
+                            />
+                            <H3>{workflow.title}</H3>
+                            <p>{workflow.description}</p>
+                        </Card>
+                    </a>
+                </Col>
+            );
+        });
+    }, [workflows]);
+
     return (
         <>
             <HtmlHead title={["Analysis Hub"]} />
             <Header activeTab="analysis-hub" />
             <FixedContainer>
-                <Row>
-                    <Col xs={6}>
-                        <Link href="/modelling-wizards">
-                            <a className={styles.cardLink}>
-                                <Card interactive style={{ padding: 0 }}>
-                                    <Row disableDefaultMargins>
-                                        <Col
-                                            xs={8}
-                                            style={{
-                                                height: "10rem",
-                                                padding: "20px 0 20px 30px",
-                                            }}
-                                        >
-                                            <H3>Modelling Wizards</H3>
-                                            <p>
-                                                Use our curated point &amp;
-                                                click dashboards to setup and run experiments
-                                                Currently available:<br/>
-                                                1. BCCVL wizard (Biodiversity and Climate Change Virtual Laboratory).<br/>
-                                                2. Biosecurity Risk Mapping.
-                                            </p>
-                                        </Col>
-                                        <Col
-                                            xs={4}
-                                            style={{
-                                                height: "10rem",
-                                                overflow: "hidden",
-                                                color: "rgba(0,0,0,0.1)",
-                                                display: "flex",
-                                                alignItems: "center",
-                                                justifyContent: "flex-end",
-                                            }}
-                                        >
-                                            <Icon
-                                                icon="select"
-                                                iconSize={80}
-                                                style={{ margin: "20px" }}
-                                            />
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </a>
-                        </Link>
-                    </Col>
-                    <Col xs={6} style={{ opacity: "0.5" }} title="Coming Soon!">
-                        <Link href="#">
-                            <a className={styles.cardLink}>
-                                <Card style={{ padding: 0 }} interactive={false} >
-                                    <Row disableDefaultMargins>
-                                        <Col
-                                            xs={8}
-                                            style={{
-                                                height: "8rem",
-                                                padding: "20px 0 20px 30px",
-                                            }}
-                                        >
-                                            <H3>Coding Cloud</H3>
-                                            <p>
-                                                Enter our online Jupyter 
-                                                environment where you can code 
-                                                using notebooks or directly on a command line. 
-                                                Currently supporting R, R Studio, Python and Julia.
-                                            </p>
-                                        </Col>
-                                        <Col
-                                            xs={4}
-                                            style={{
-                                                height: "8rem",
-                                                overflow: "hidden",
-                                                color: "rgba(0,0,0,0.1)",
-                                                display: "flex",
-                                                alignItems: "center",
-                                                justifyContent: "flex-end",
-                                            }}
-                                        >
-                                            <Icon
-                                                icon="console"
-                                                iconSize={80}
-                                                style={{ margin: "20px" }}
-                                            />
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </a>
-                        </Link>
-                    </Col>
-                </Row>
-                {/* <Row>
-                    <Col xs={12}>
-                        <Link href="/function-catalogue">
-                            <a>
-                                <Card interactive>
-                                    <H3>Function Catalogue</H3>
-                                    <p>...</p>
-                                </Card>
-                            </a>
-                        </Link>
-                    </Col>
-                </Row> */}
+            <Row>{cards}</Row>
             </FixedContainer>
             <Footer/>
         </>
     );
 }
+
