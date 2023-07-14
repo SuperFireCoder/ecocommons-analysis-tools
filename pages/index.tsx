@@ -46,13 +46,15 @@ export default function AnalysisHubIndexPage() {
                 return null;
             }
 
+            const cardLinkProps = {
+                className: stylesIndex.cardLink,
+                href: config.publicRuntimeConfig[workflow.url] ?? "#",
+                target: workflow.isNewTab === true ? "_blank" : undefined,
+              };
+
             return (
-                <Col xs={4} key={`Workflow_${workflow.id}`}>
-                    <a
-                        className={stylesIndex.cardLink}
-                        href={config.publicRuntimeConfig[workflow.url] ?? "#"}
-                        // href={"./coding-cloud"}
-                    >
+                <Col xs={4} key={`Workflow_${workflow.id}`} style={{ marginBottom: "16px" }}>
+                    <a{...cardLinkProps}>
                         <Card interactive className={stylesIndex.card}>
                             <Tag intent={Intent.PRIMARY} style={{ backgroundColor: workflow.categoryColor, position: "absolute", top: 0, right: "8px" }}>{workflow.category}</Tag>
                             <br></br>

@@ -5,7 +5,8 @@ export interface WorkflowCard {
     url: string;
     imagePath: string;
     category: String;
-    categoryColor: string
+    categoryColor: string,
+    isNewTab: boolean
 }
 
 export interface Page {
