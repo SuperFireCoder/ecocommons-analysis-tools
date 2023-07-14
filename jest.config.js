@@ -11,4 +11,6 @@ module.exports = {
         "/jest-coverage/",
         "/cypress/"
     ],
+    coverageReporters: ["text-summary"],
+    collectCoverage: true,
 };

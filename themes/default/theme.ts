@@ -11,7 +11,8 @@ const workflows: WorkflowCard[] = [
         imagePath: "https://w7vfwul3.dreamwp.com/wp-content/uploads/2016/06/BCCVL_Logo_Horizontal_RGB.png",
         url: "NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BCCVL_URL",
         category: "Modelling Wizard",
-        categoryColor: "#26ac94"
+        categoryColor: "#26ac94",
+        isNewTab: false
     },
     {
         id: "BSRMAP",
@@ -20,7 +21,8 @@ const workflows: WorkflowCard[] = [
         imagePath: "images/workflows/risk_mapping_sml.png",
         url: 'NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BSRMAP_URL',
         category: "Modelling Wizard",
-        categoryColor: "#26ac94"
+        categoryColor: "#26ac94",
+        isNewTab: false
     },
     {
         id: "CC",
@@ -29,7 +31,18 @@ const workflows: WorkflowCard[] = [
         imagePath: "images/workflows/console_icon.png",
         url: 'NEXT_PUBLIC_ANALYSIS_TOOLS_CODING_CLOUD',
         category: "Command-Line Environment",
-        categoryColor: "#65c4f2"
+        categoryColor: "#65c4f2",
+        isNewTab: false
+    },
+    {
+        id: "COESRA",
+        title: `CoESRA`,
+        description: `Collaborative Environment for Scholarly Research and Analysis.`,
+        imagePath: "images/workflows/coesra.png",
+        url: 'NEXT_PUBLIC_ANALYSIS_TOOLS_COESRA',
+        category: "Virtual Desktop Environment",
+        categoryColor: "#456d41",
+        isNewTab: true
     },
 ];
 
