@@ -12,6 +12,8 @@ import { useMemo } from "react";
 
 import { Page, WorkflowCard } from "../interfaces/Theme";
 
+import { useKeycloakInfo } from "../util/keycloak";
+
 import Link from "next/link";
 
 import Header from "../components/Header";
@@ -25,6 +27,8 @@ import getConfig from "next/config";
 const config = getConfig();
 
 export default function AnalysisHubIndexPage() {
+    const { keycloak } = useKeycloakInfo();
+
     const { getThemeValue } = useTheme();
 
     const workflows: WorkflowCard[] | undefined = getThemeValue(
@@ -74,6 +78,10 @@ export default function AnalysisHubIndexPage() {
             );
         });
     }, [workflows]);
+
+    if (keycloak?.authenticated === undefined) {
+        return (null);
+    }
 
     return (
         <>
