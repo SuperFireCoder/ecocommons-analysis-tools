@@ -1,5 +1,5 @@
 # set these ARG globally across builds
-ARG BASE_IMAGE=node:12
+ARG BASE_IMAGE=node:19
 ARG NODE_ENV=development
 ARG BUILD_DIR=/srv/app
 
@@ -15,7 +15,7 @@ COPY package*.json ./
 
 RUN npm config set @ecocommons-australia:registry https://gitlab.com/api/v4/packages/npm/ && \
     npm config set '//gitlab.com/api/v4/packages/npm/:_authToken' $NPM_AUTHTOKEN && \
-    npm ci --no-optional
+    npm ci --omit=optional && npm i @next/swc-linux-x64-gnu
 
 EXPOSE 3000
 
@@ -48,7 +48,7 @@ ENV NEXT_PUBLIC_BUILD_ID=$BUILD_ID
 ENV NODE_ENV=$NODE_ENV
 
 # only use dependencies required by NODE_ENV
-RUN npm ci --no-optional
+RUN npm ci --omit=dev --omit=optional
 
 RUN chown -R node:node ./ 
 USER node
