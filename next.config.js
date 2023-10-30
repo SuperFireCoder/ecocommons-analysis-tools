@@ -6,5 +6,14 @@ const nextPublicEnv = Object.fromEntries(
                     );
 
 module.exports = {
-    publicRuntimeConfig: nextPublicEnv
+    publicRuntimeConfig: nextPublicEnv,
+    async redirects() {
+        return [
+          {
+            source: '/modelling-wizards', // legacy
+            destination: '/',
+            permanent: true,
+          },
+        ];
+    },
 };

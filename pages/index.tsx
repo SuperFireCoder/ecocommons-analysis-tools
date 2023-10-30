@@ -57,11 +57,26 @@ export default function AnalysisHubIndexPage() {
               };
 
             return (
-                <Col xs={4} key={`Workflow_${workflow.id}`} style={{ marginBottom: "16px" }}>
+                <Col    xs={getThemeValue("Number::AnalysisTools.WorkflowCardSize") ?? 4} 
+                        key={`Workflow_${workflow.id}`} 
+                        style={{ marginBottom: "10px" }}
+                >
                     <a{...cardLinkProps}>
                         <Card interactive className={stylesIndex.card}>
-                            <Tag intent={Intent.PRIMARY} style={{ backgroundColor: workflow.categoryColor, position: "absolute", top: 0, right: "8px" }}>{workflow.category}</Tag>
-                            <br></br>
+                        {workflow.category &&
+                            <>
+                                <Tag 
+                                    intent={Intent.PRIMARY} 
+                                    style={{ 
+                                        backgroundColor: workflow.categoryColor, 
+                                        position: "absolute", 
+                                        top: 0, right: "8px"
+                                    }}
+                                >{workflow.category}
+                                </Tag>
+                                <br></br>
+                                </>
+                            }
                             <img
                                 src={workflow.imagePath}
                                 style={{
