@@ -15,14 +15,15 @@
   "dependencies": {
     "@blueprintjs/core": "5.0.1",
     "@blueprintjs/icons": "5.1.5",
-    "@ecocommons-australia/ui-library": "2.0.0",
+    "@ecocommons-australia/bsc-theme": "1.0.16",
+    "@ecocommons-australia/ui-library": "2.0.1",
     "@react-keycloak/ssr": "3.3.0",
-    "axios": "0.21.1",
+    "axios": "0.21.4",
     "classnames": "2.2.6",
     "cookie": "0.4.1",
     "gensync": "1.0.0-beta.2",
     "keycloak-js": "11.0.3",
-    "next": "13.4.3",
+    "next": "13.5.6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-grid-system": "^8.1.0"
@@ -44,7 +45,7 @@
   },
   "optionalDependencies": {
     "@cypress/code-coverage": "3.9.12",
-    "cypress": "12.13.0",
+    "cypress": "13.3.3",
     "cypress-multi-reporters": "1.6.1",
     "cypress-split": "1.3.13",
     "istanbul-lib-coverage": "3.2.0"

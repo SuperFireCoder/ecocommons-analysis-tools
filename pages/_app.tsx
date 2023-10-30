@@ -5,7 +5,7 @@ import { IncomingMessage } from "http";
 import { SSRKeycloakProvider, SSRCookies } from "@react-keycloak/ssr";
 import { buildThemeWrapper } from "@ecocommons-australia/ui-library";
 
-import { getKeycloakAuthParameters } from "../util/env";
+import { getKeycloakAuthParameters, IS_BSC } from "../util/env";
 import { useEffect } from "react";
 import router from "next/router";
 import * as gtag from "../util/gtag";
@@ -17,14 +17,20 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import "@ecocommons-australia/ui-library/src/styles/global.css";
 
 import { theme } from "../themes/default/theme";
+import { theme as bscTheme } from "@ecocommons-australia/bsc-theme";
+
 import "../themes/default/styles/global.css";
+import "@ecocommons-australia/bsc-theme/styles/global.css";
 
 interface Props extends AppProps {
     /** Cookies in request */
     cookies: unknown;
 }
 
-const ThemeWrapper = buildThemeWrapper(theme);
+// Build ThemeWrapper component once, to be used inside the root component
+const ThemeWrapper = buildThemeWrapper(IS_BSC
+        ? bscTheme 
+        : theme);
 
 function SafeHydrate({ children }: any) {
   return (
