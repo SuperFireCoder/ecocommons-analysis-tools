@@ -8,7 +8,7 @@ const workflows: WorkflowCard[] = [
         id: "BCCVL",
         title: "BCCVL",
         description: `Biodiversity and Climate Change Virtual Laboratory (BCCVL) - Range of SDM tools such as: climate projections, ensemble, multiple species, migratory analysis (i.e. monthly), species trait modelling.`,
-        imagePath: "https://w7vfwul3.dreamwp.com/wp-content/uploads/2016/06/BCCVL_Logo_Horizontal_RGB.png",
+        imagePath: "images/workflows/bccvl_sml.png",
         url: "NEXT_PUBLIC_ANALYSIS_TOOLS_MODELLING_WIZARDS_BCCVL_URL",
         category: "Modelling Wizard",
         categoryColor: "#26ac94",
