@@ -29,6 +29,10 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
+  runtime: 'experimental-edge',
+  unstable_allowDynamic: [
+    '/middleware.ts', // https://nextjs.org/docs/messages/edge-dynamic-code-evaluation
+  ],
   matcher: [
     '/home', 
     '/datasets',
