@@ -1,6 +1,6 @@
 {
   "name": "analysis-tools-ui",
-  "version": "1.1.1",
+  "version": "1.3.0",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",

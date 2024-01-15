@@ -21,19 +21,19 @@ module.exports = (on, config) => {
     // `on` is used to hook into various events Cypress emits
     // `config` is the resolved Cypress config
   
-    on('before:browser:launch', (browser = {}, launchOptions) => {
-      if ((browser.family === 'chromium' && browser.name !== 'electron') || browser.name !== 'chrome') {
-        launchOptions.args.push('--disable-dev-shm-usage')
-      }
-      return launchOptions
-    })
+    // on('before:browser:launch', (browser = {}, launchOptions) => {
+    //   if ((browser.family === 'chromium' && browser.name !== 'electron') || browser.name !== 'chrome') {
+    //     launchOptions.args.push('--disable-dev-shm-usage')
+    //   }
+    //   return launchOptions
+    // })
   
-    // https://docs.cypress.io/api/plugins/after-run-api
-    on('after:run', (results) => {
-        return require('cypress-sonarqube-reporter/mergeReports')(results);
-    });
+    // // https://docs.cypress.io/api/plugins/after-run-api
+    // on('after:run', (results) => {
+    //     return require('cypress-sonarqube-reporter/mergeReports')(results);
+    // });
   
-    require('@cypress/code-coverage/task')(on, config)
+    // require('@cypress/code-coverage/task')(on, config)
   
     return config;
   }
