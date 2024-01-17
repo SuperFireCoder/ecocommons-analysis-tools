@@ -26,6 +26,13 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(process.env.NEXT_PUBLIC_WORKFLOW_URL ?? '/', request.url))
   }
 
+  if (request.nextUrl.pathname === '/status') {
+    return Response.json(
+      { version: process.env.NEXT_PUBLIC_BUILD_ID ?? ''},
+      { status: 200 }
+    )
+  }
+
 }
 
 export const config = {
@@ -39,5 +46,6 @@ export const config = {
     '/projects',
     '/analysis-hub',
     '/workspace',
+    '/status'
     ],
 }
