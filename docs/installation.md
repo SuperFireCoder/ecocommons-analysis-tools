@@ -28,3 +28,14 @@
     ```bash
     npm ci
     ```
+
+4. __Customize environment__
+
+    `.env.dev` provides a baseline of environment vars to get development done out of the box.
+    Sometimes there is a need customize env, ie changing a backend API to point to a local instance.
+   
+    These type of changes should always be done in the override file `.env.local` (on git ignore list).
+
+    ```bash
+    cp .env.local.example .env.local
+    ```

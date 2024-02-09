@@ -28,4 +28,14 @@ can be found at https://nextjs.org/docs/advanced-features/debugging.
 
 ### Docker Compose
 
-(Coming soon)
+The full deployment image can be built and used for local dev as an alternative to running npm locally.
+
+### To start
+```bash
+docker compose up
+```
+
+### To stop
+```bash
+docker compose down
+```
