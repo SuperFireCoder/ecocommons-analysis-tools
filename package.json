@@ -15,7 +15,7 @@
   "dependencies": {
     "@blueprintjs/core": "5.0.1",
     "@blueprintjs/icons": "5.1.5",
-    "@ecocommons-australia/bsc-theme": "1.0.18",
+    "@ecocommons-australia/bsc-theme": "1.0.22",
     "@ecocommons-australia/ui-library": "2.0.1",
     "@react-keycloak/ssr": "3.3.0",
     "axios": "0.21.4",
